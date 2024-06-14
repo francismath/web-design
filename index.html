@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #333;
+            box-sizing: border-box;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #002147;
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+        }
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+            margin-right: 20px;
+        }
+        .menu-icon div {
+            width: 24px;
+            height: 2px;
+            background-color: #002147;
+        }
+        .menu-icon div:nth-child(2) {
+            margin: 6px 0;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            gap: 1em;
+            position: absolute;
+            top: 70px;
+            left: 10px;
+            background-color: #f4f4f4;
+            padding: 1em;
+            border: 1px solid #002147;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu a {
+            text-decoration: none;
+            color: #002147;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            font-weight: 400;
+            color: #002147;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .name a {
+            text-decoration: none;
+            color: #002147;
+        }
+        .gallery {
+            padding: 2em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .gallery-item {
+            text-align: center;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .caption {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+        footer {
+            background-color: #002147;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu" id="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="name">
+            <a href="index.html">Haozhu Li</a>
+        </div>
+    </nav>
+
+    <div class="gallery">
+
+         <div class="gallery-item">
+            <a href="artwork.html?img=images/Acrylic-Monochrome Exercise 1.jpeg&caption=Acrylic-Monochrome Exercise 1">
+                <img src="images/Acrylic-Monochrome Exercise 1.jpeg" alt="Artwork 1">
+            </a>
+            <div class="caption">
+                <strong>Acrylic-Monochrome-Exercise-1</strong><br>
+            </div>
+        </div>
+
+       <div class="gallery-item">
+            <a href="artwork.html?img=images/Acrylic-Monochrome Exercise 2.jpeg&caption=Acrylic-Monochrome Exercise 2">
+                <img src="images/Acrylic-Monochrome Exercise 2.jpeg" alt="Artwork 2">
+            </a>
+            <div class="caption">
+                <strong>Acrylic-Monochrome Exercise 2</strong><br>
+            </div>
+        </div>
+
+       <div class="gallery-item">
+            <a href="artwork.html?img=images/Acrylic-Cute animals resting in the forest.jpg&caption=Acrylic-Cute animals resting in the forest">
+                <img src="images/Acrylic-Cute animals resting in the forest.jpg" alt="Artwork 3">
+            </a>
+            <div class="caption">
+                <strong>Acrylic-Cute animals resting in the forest</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Acrylic-Squirral in the forest.jpg&caption=Acrylic-Squirral in the forest">
+                <img src="images/Acrylic-Squirral in the forest.jpg" alt="Artwork 4">
+            </a>
+            <div class="caption">
+                <strong>Acrylic-Squirral in the forest</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Oil-Alone 1.jpeg&caption=Oil-Alone 1">
+                <img src="images/Oil-Alone 1.jpeg" alt="Artwork 5">
+            </a>
+            <div class="caption">
+                <strong>Oil-Alone 1</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Oil-Alone 2.jpeg&caption=Oil-Alone 2">
+                <img src="images/Oil-Alone 2.jpeg" alt="Artwork 6">
+            </a>
+            <div class="caption">
+                <strong>Oil-Alone 2</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Alps Scenery 1.jpg&caption=Watercolor-Alps Scenery 1">
+                <img src="images/Watercolor-Alps Scenery 1.jpg" alt="Artwork 7">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Alps Scenery 1</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Alps Scenery 2.jpg&caption=Watercolor-Alps Scenery 2">
+                <img src="images/Watercolor-Alps Scenery 2.jpg" alt="Artwork 8">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Alps Scenery 2</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Banff Scenery 1.jpg&caption=Watercolor-Banff Scenery 1">
+                <img src="images/Watercolor-Banff Scenery 1.jpg" alt="Artwork 9">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Banff Scenery 1</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Banff Scenery 2.jpg&caption=Acrylic-Squirral in the forest">
+                <img src="images/Watercolor-Banff Scenery 2.jpg" alt="Artwork 10">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Banff Scenery 2</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Misty Alps Scenery 1.jpg&caption=Watercolor-Misty Alps Scenery 1">
+                <img src="images/Watercolor-Misty Alps Scenery 1.jpg" alt="Artwork 11">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Misty Alps Scenery 1</strong><br>
+            </div>
+        </div>
+
+       <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Misty Alps Scenery 2.jpg&caption=Watercolor-Misty Alps Scenery 2">
+                <img src="images/Watercolor-Misty Alps Scenery 2.jpg" alt="Artwork 12">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Misty Alps Scenery 2</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Misty Coniferous Forest 1.jpeg&caption=Watercolor-Misty Coniferous Forest 1">
+                <img src="images/Watercolor-Misty Coniferous Forest 1.jpeg" alt="Artwork 13">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Misty Coniferous Forest 1</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Misty Coniferous Forest 2.jpg&caption=Watercolor-Misty Coniferous Forest 2">
+                <img src="images/Watercolor-Misty Coniferous Forest 2.jpg" alt="Artwork 14">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Misty Coniferous Forest 2</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Misty Coniferous Forest 3.jpg&caption=Watercolor-Misty Coniferous Forest 3">
+                <img src="images/Watercolor-Misty Coniferous Forest 3.jpg" alt="Artwork 15">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Misty Coniferous Forest 3</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Misty Coniferous Forest 4.jpg&caption=Watercolor-Misty Coniferous Forest 4">
+                <img src="images/Watercolor-Misty Coniferous Forest 4.jpg" alt="Artwork 16">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Misty Coniferous Forest 4</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Acrylie-Pink sea.jpg&caption=Acrylie-Pink sea">
+                <img src="images/Acrylie-Pink sea.jpg" alt="Artwork 17">
+            </a>
+            <div class="caption">
+                <strong>Acrylie-Pink sea</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Foggy Snowy Mountain.jpeg&caption=Watercolor-Foggy Snowy Mountain">
+                <img src="images/Watercolor-Foggy Snowy Mountain.jpeg" alt="Artwork 18">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Foggy Snowy Mountain</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Banff Scenery 3.jpg&caption=Watercolor-Banff Scenery 3">
+                <img src="images/Watercolor-Banff Scenery 3.jpg" alt="Artwork 19">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Banff Scenery 3</strong><br>
+            </div>
+        </div>
+
+       <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Monochrome Exercise.jpg&caption=Watercolor-Monochrome Exercise">
+                <img src="images/Watercolor-Monochrome Exercise.jpg" alt="Artwork 20">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Monochrome Exercise</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Emerald Lake Scenery.jpeg&caption=Emerald Lake Scenery">
+                <img src="images/Emerald Lake Scenery.jpeg" alt="Artwork 21">
+            </a>
+            <div class="caption">
+                <strong>Emerald Lake Scenery</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Needle Pen Drawing.jpg&caption=Needle Pen Drawing">
+                <img src="images/Needle Pen Drawing.jpg" alt="Artwork 22">
+            </a>
+            <div class="caption">
+                <strong>Needle Pen Drawing</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Oil-Portrait.jpeg&caption=Oil-Portrait">
+                <img src="images/Oil-Portrait.jpeg" alt="Artwork 23">
+            </a>
+            <div class="caption">
+                <strong>Oil-Portrait</strong><br>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <a href="artwork.html?img=images/Watercolor-Healing Scenery.jpeg&caption=Watercolor-Healing Scenery">
+                <img src="images/Watercolor-Healing Scenery.jpeg" alt="Artwork 24">
+            </a>
+            <div class="caption">
+                <strong>Watercolor-Healing Scenery</strong><br>
+            </div>
+        </div>
+
+        <!-- Add more gallery items as needed -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Haozhu Li. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+
+        // Close menu if clicked outside
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu');
+            var menuIcon = document.querySelector('.menu-icon');
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Prevent menu from closing when clicking inside the menu
+        document.getElementById('menu').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>
