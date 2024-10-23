@@ -76,6 +76,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
         .fullscale img {
             width: 100%;
@@ -83,11 +84,10 @@
             height: auto;
             border: none;
             margin-bottom: 20px;
-            cursor: pointer;
         }
         .details img {
             width: 100%;
-            max-width: 300px;
+            max-width: 600px;
             height: auto;
             border: none;
             margin-bottom: 20px;
@@ -129,7 +129,7 @@
             <img id="fullscale-img" src="" alt="Full Scale Artwork">
         </div>
         <div class="details">
-            <img id="details-img" src="images/Second-Photo.jpg" alt="Details Image">
+            <img id="details-img" src="" alt="Details Image">
         </div>
         <div class="caption" id="art-caption"></div>
     </div>
@@ -165,9 +165,11 @@
         // Display the selected artwork
         document.addEventListener('DOMContentLoaded', () => {
             let params = getQueryParams();
-            if (params.img && params.caption) {
-                document.getElementById('fullscale-img').src = params.img;
-                document.getElementById('art-caption').textContent = params.caption;
+            // Ensure both fullscale and detail images, as well as the caption, are processed correctly
+            if (params.img && params.detailsImg && params.caption) {
+                document.getElementById('fullscale-img').src = params.img; // Set fullscale image source
+                document.getElementById('details-img').src = params.detailsImg; // Set details image source
+                document.getElementById('art-caption').textContent = params.caption; // Set caption
             }
         });
     </script>
